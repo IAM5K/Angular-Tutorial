@@ -19,6 +19,9 @@
     align-content: center;
     text-align: center;
 }
+h1 h3 h4{
+    margin-top: 10px;
+}
 button{
     padding: 6px;
     font-weight: bold;
