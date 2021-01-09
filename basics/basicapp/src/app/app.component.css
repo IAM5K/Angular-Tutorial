@@ -1,0 +1,26 @@
+.add
+{
+    width: 90%;
+    height: 400px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: aqua;
+    align-items: center;
+}
+.subs
+{
+    width: 90%;
+    height: 400px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: aquamarine;
+    align-content: center;
+    text-align: center;
+}
+button{
+    padding: 6px;
+    font-weight: bold;
+    
+}
