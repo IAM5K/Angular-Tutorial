@@ -1,3 +1,11 @@
+html{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+}
 .add{
     background-color: aqua;
     width: 95%;
@@ -6,6 +14,12 @@
     border:solid 2px blueviolet;
     border-radius: 8px;
 }
-th{
-    float: left;
+table
+{
+    margin-left: 30px;
+}
+td{
+    position: relative;
+    padding-left: 50px;
+    margin-left: 40px;
 }
