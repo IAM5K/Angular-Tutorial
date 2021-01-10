@@ -1,0 +1,17 @@
+<div class="add">
+    <h3>We will add numbers</h3>
+    <tr>
+      <th>Enter First Number</th>
+      <th><input type="number" [(ngModel)]="num1"></th>
+    </tr>
+    <tr>
+      <th>Enter Second Number</th>
+      <th><input type="number"[(ngModel)]="num2"></th>
+    </tr>
+    <br>
+    <button (click)="add()">Add</button>
+    <button (click)="subs()">Substract</button>
+    <!-- <h3 [Disable]="{dis}" >{{sum}}</h3> -->
+    <h3>{{sum}} </h3><br>
+    <h3>{{diff}} </h3>
+  </div>

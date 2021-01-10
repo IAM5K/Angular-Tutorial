@@ -1,0 +1,11 @@
+.add{
+    background-color: aqua;
+    width: 95%;
+    position: relative;
+    margin: auto;
+    border:solid 2px blueviolet;
+    border-radius: 8px;
+}
+th{
+    float: left;
+}
