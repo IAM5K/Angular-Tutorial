@@ -1,3 +1,4 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,56 +13,63 @@ export class ArithmaticComponent implements OnInit {
   num2:number;
   op:string;
   result:string;
-  sum:string;
-  diff:string;
-  product:string;
+  result2:string;
   res:number;
   dis:boolean;
-  dis2:boolean;
 
-  constructor() { 
+  constructor() {
 
-
+  }
+  clearall(){
+    this.result=null;
+    this.result2=null;
+    this.res=null;
+    this.dis=null;
   }
 
   add(){
     this.res=this.num2+this.num1;
     if(this.res!==undefined){
-      this.sum='Sum is : '+this.res;
-      this.diff='';
-      this.product='';
+      this.result='Sum is : '+this.res;
     }
     else{
-      this.sum=null;
+      this.result='Addition Failed';
     }
   }
   subs(){
     this.res=this.num1-this.num2;
     if(this.res!==undefined){
-      this.diff='Difference is : '+this.res;
-      this.sum=null;
-      this.product='';
+      this.result='Difference is : '+this.res;
     }
     else{
-      this.diff='';
+      this.result='Substraction Failed';
     }
   }
   multiply(){
     this.res=this.num1*this.num2;
     if(this.res!==undefined){
-      this.product='Product is : '+this.res;
-      this.sum=null;
-      this.diff='';
+      this.result='Product is : '+this.res;      
     }
     else{
-      this.product='Invalid';
-      this.diff='';
-      this.sum=null;
+      this.result='Invalid Multiplication';
+    }
+  }
+  divide(){
+    let r:number;
+    this.res=this.num1/this.num2;
+    r=this.num1% this.num2;
+    if(this.res!==undefined){
+      this.result=`Value for ${this.num1}/${this.num2} is : ${this.res}`+"Remainder is : "+r;
+      
+    }
+    else{
+      this.result='Invalid Division';
     }
   }
   
   arith(){
     if(this.num1!==null && this.num2!==null){
+      this.clearall();
       if(this.op=='Add'){
         this.add();
       }
@@ -71,9 +79,14 @@ export class ArithmaticComponent implements OnInit {
       else if(this.op=='Multiply'){
         this.multiply();
       }
+      else if(this.op=='Divide'){
+        this.divide();
+      }
       else{
         this.result='Invalid Operation on '+this.num1+' && '+this.num2;
       }
+      this.result2=this.result;
+      this.result='';
     }
   }
 
