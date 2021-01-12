@@ -1,4 +1,7 @@
-<h2 align="center">Perform Basic Arithmatic Operations Here</h2>
+<br><div class="add">
+    <h2 align="center">Perform Basic Arithmatic Operations Here</h2>
+</div>
+<br><br>
 <div class="add">
     <table>
         <tr><h3>Add and Substract 2 Numbers</h3></tr>
@@ -30,7 +33,7 @@
             <td><input type="number"[(ngModel)]="num2"></td>
         </tr>
         <tr>
-            <td align="right">Select Operation </td>
+            <td >Select Operation </td>
             <td>
                 <select name="Operation" [(ngModel)]="op" required="required">
                 <option>Add</option>
@@ -44,6 +47,6 @@
             <td></td>
             <td><button (click)="arith()">Check Result</button></td>
         </tr>
-        <tr><h3 >{{result2}}</h3></tr>
+        <tr><h3 style="margin-left: 40px;" >{{result2}}</h3></tr>
     </table>
 </div>

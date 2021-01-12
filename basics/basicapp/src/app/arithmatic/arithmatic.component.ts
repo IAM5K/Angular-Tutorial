@@ -20,6 +20,7 @@ export class ArithmaticComponent implements OnInit {
   constructor() {
 
   }
+
   clearall(){
     this.result=null;
     this.result2=null;
@@ -56,11 +57,18 @@ export class ArithmaticComponent implements OnInit {
   }
   divide(){
     let r:number;
-    this.res=this.num1/this.num2;
+    let d:number;
+    let div:any;
+    let val:any;
+    d=this.num1/this.num2;
+    r=d%1;
+    val = d.toFixed(2);
+    div = val-(val%1);
     r=this.num1% this.num2;
     if(this.res!==undefined){
-      this.result=`Value for ${this.num1}/${this.num2} is : ${this.res}`+"Remainder is : "+r;
-      
+      this.result=`${`Value for ${this.num1}/${this.num2} is : ` + val}
+        Dividend is : ${div}
+        Remainder is : ${r}`;      
     }
     else{
       this.result='Invalid Division';
@@ -91,6 +99,7 @@ export class ArithmaticComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
 }
