@@ -79,3 +79,20 @@ export class AppComponent implements OnInit{
 </div>
 
 <router-outlet></router-outlet>
+
+
+showArithmatic:boolean=false;
+showGeometry:boolean=false;
+showcomp:string;
+goto(path:string){
+  if(path=='arithmatic'){
+    this.showArithmatic=true;
+  }
+  else if(path=='geometry'){
+    this.showGeometry=true;
+  }
+  else if(path=='home'){
+    this.showGeometry=false;
+    this.showArithmatic=false;
+  }
+}

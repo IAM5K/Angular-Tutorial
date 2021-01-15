@@ -4,11 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArithmaticComponent } from './arithmatic/arithmatic.component';
+import { GeometryComponent } from './geometry/geometry.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArithmaticComponent
+    ArithmaticComponent,
+    GeometryComponent,
+    MenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

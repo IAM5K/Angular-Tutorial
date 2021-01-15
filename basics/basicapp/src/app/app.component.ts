@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MenuComponent } from './menu/menu.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'basicapp';
+  showArithmatic:boolean=true;
+  showGeometry:boolean=false;
+  showcomp:string;
+  
+ 
 }
