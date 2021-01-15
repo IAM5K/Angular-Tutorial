@@ -1,15 +1,25 @@
 <div class="sidebar"><nav>
     <ul class="navul">
         <br>
-        <li><a href="home">Home</a></li>
-        <li><a href="arithmatic">Arithmatic</a></li>
-        <li><a href="geometry">Geometry</a></li>
+        <a href="home"><li>Home</li></a>
+        <a href="arithmatic"><li>Arithmatic</li></a>
+        <a href="geometry"><li>Geometry</li></a>
     </ul>
 </nav>
 </div>
-<div class="content">    
-    <router-outlet></router-outlet>
-    <h1 >showArithmatic value is:  </h1>
-    <h1>showGeometry value is: </h1>
+
+<div class="content" [ngSwitch]="currentRoute">
+    <app-home *ngSwitchCase="'/'"></app-home>
+    <router-outlet *ngSwitchDefault></router-outlet>
 </div>
 
+<!-- <div class="content" [ngSwitch]="currentRoute">
+    <h2 *ngSwitchCase="'/'">Root called in : {{currentRoute}} </h2>
+    <h2 *ngSwitchDefault>Default called in : {{currentRoute}} </h2>
+</div> -->
+
+<!-- <div class="content" [ngSwitch]="dynamiccontent">    
+    <app-home *ngSwitchDefault></app-home>
+    <router-outlet *ngSwitchCase="'home'"></router-outlet>
+    <h1 >showArithmatic value is: {{dynamiccontent}} </h1>
+</div> -->

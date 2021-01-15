@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MenuComponent } from './menu/menu.component';
+import {Router,Event,NavigationEnd } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,16 @@ export class AppComponent {
   title = 'basicapp';
   showArithmatic:boolean=true;
   showGeometry:boolean=false;
-  showcomp:string;
-  
- 
+  dynamiccontent:string="home";
+  public currentRoute: string ;
+
+  constructor(private router: Router, private location:Location) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((event: Event)=>{
+      if(event instanceof NavigationEnd){
+        this.currentRoute=(<NavigationEnd>event).url;
+      }
+    });
+  }
 }

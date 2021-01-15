@@ -16,7 +16,8 @@ v 0.0.3 : Login App created.\
 v 0.0.4 : Implemented Add and Substract(unstable:chances of error).\
 v 0.0.5 : Implemented Add and Substract(stable).\
 v 0.0.6 : Arithmatic component Added with 2 working div to Add,Substract and Multiply.\
-v 0.0.7 : Comming Soon.\ 
+v 0.0.7 : Geometry & Home component added.
+v 0.0.8 : Geometry Basics Added, Defined Home page, implemented ngIf,ngFor,ngSwitch; 
 
 
 

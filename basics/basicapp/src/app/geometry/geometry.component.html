@@ -1,1 +1,15 @@
-<h1>geometry works!</h1>
+<h1>Geometry Basics</h1>
+
+<div class="shapes">
+    <tr>
+        <td>Name</td>
+        <td>Sides</td>
+        <td>Perimeter</td>
+    </tr>
+    <tr *ngFor="let shape of shapes" >
+        <td>{{shape.name}}</td>
+        <td>{{shape.side}}</td>
+        <td>{{shape.perimeter}}</td>
+    </tr>
+
+</div>

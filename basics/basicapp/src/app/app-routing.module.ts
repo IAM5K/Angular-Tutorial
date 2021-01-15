@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { ArithmaticComponent } from './arithmatic/arithmatic.component';
 import { GeometryComponent } from './geometry/geometry.component';
 import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
 
 const root = { path: '', component:AppComponent };
 const home = { path: 'home', component:HomeComponent  }
