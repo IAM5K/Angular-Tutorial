@@ -1,3 +1,5 @@
+# Basic App 
+
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -49,7 +51,7 @@ export class AppComponent implements OnInit{
 
 
 
-<div class="add">
+<!-- <div class="add">
   <h3>We will add numbers</h3>
   <tr>
     <th>Enter First Number</th>
@@ -78,7 +80,7 @@ export class AppComponent implements OnInit{
   <h3 [Disable]="{dis2}">{{diff}}</h3>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
 
 
 showArithmatic:boolean=false;
