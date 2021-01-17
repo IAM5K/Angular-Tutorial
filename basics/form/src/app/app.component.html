@@ -1,0 +1,104 @@
+<div class="container-fluid" *ngIf="!enrolled">
+  <h1>
+    Basic Form
+  </h1><br>
+   <div class="alert alert-danger" *ngIf="errorMsg" >
+     {{errorMsg}}
+   </div>
+
+  <form action="" #userForm="ngForm"  (ngSubmit)="onSubmit()" novalidate >
+    <!-- User form is directive variable and ngForm is directive -->
+<!-- User form is directive variable and ngForm is directive -->
+<!-- <h4>{{userForm.value | json}}</h4><hr> -->
+<!-- Interpolation to check live values || two way data binding || done with [(ngModel)] attached to element-->
+<!-- <h4>{{userModel | json}}</h4> <hr>-->
+<!-- Importing stored values from  array|| One-way data binding || done with [ngModel] attached to element -->
+
+    <div class="form-group">
+      <label for="">Name</label>
+      <input #name="ngModel" type="text" class="form-control" name="name" [(ngModel)]="userModel.name" required>
+      <!-- here #name is reference variable -->
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched" >Invalid Name</small>
+    </div>
+
+    <!-- {{name.className}}
+    <h5> Validity : {{name.valid}} </h5>
+    <h5> Touched: {{name.touched}} </h5>
+    <h5>Modified:  {{name.dirty}} </h5> -->
+   
+
+    <br>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" class="form-control" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" name="email" required [(ngModel)]="userModel.email">
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched" >Invalid Email</small>
+      <!-- <h5> Validity : {{email.valid}} </h5>
+      <h5> Untouched: {{email.untouched}} </h5> -->
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input required type="tel" #phone="ngModel" pattern="^\d{10}$" 
+      [class.is-invalid]="phone.invalid && phone.touched" class="form-control" name="phone" [(ngModel)]="userModel.phone">
+      <div *ngIf="phone.errors && (phone.invalid || phone.touched)" >
+        <small class="text-danger" *ngIf="phone.errors.required" >Phone Number is required</small>
+        <small class="text-danger" *ngIf="phone.errors.pattern" >Phone Number must be of 10 Digit</small>
+
+      </div>
+    </div>
+    <br>
+
+
+    <div class="form-group">
+      <label for="">Select Topic :  </label>
+        <select #topic="ngModel" (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" [class.is-invalid]="topicHasError && topic.touched" class="custom-select" name="topic" [(ngModel)]="userModel.topic">          
+          <option  value="default"> Select Topic  </option>
+          <option  *ngFor="let topic of topics" > {{topic}} </option>
+
+        </select>
+        <small class="text-danger" [class.d-none]="!topicHasError || topic.untouched" >Invalid Topic</small>
+        <!-- <h5> Validity : {{topic.valid}} </h5>
+        <h5> Error : {{topicHasError}} </h5>
+        <h5> Touched: {{topic.touched}} </h5> -->
+    </div>
+
+
+    <br><br>
+    <div class="mb-3" >
+      <label for="">Time preference</label>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" value="morning" name="timePreference" [(ngModel)]="userModel.timePreference">
+        <label for="" class="form-check-label" >Morning (9AM - 12PM)</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" value="evening" name="timePreference" [(ngModel)]="userModel.timePreference">
+        <label for="" class="form-check-label">Evening (5PM - 9PM)</label>
+      </div>
+
+    </div>
+    <br><br>
+    <div class="mb-3">
+      <label for="">Time preference</label>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" value="subscribe" name="subscribe" [(ngModel)]="userModel.subscribe">
+        <label for="" class="form-check-label">Subscribe to Promotional Offers</label>
+      </div>
+    </div>
+    
+    <!-- 
+    <h4>Checking Overall form Status to manipulate buttons</h4>
+    <h4>Form Vality: {{userForm.form.invalid}}</h4>
+    <h4>Form Untouched : {{userForm.form.untouched}}</h4> -->
+    <button [disabled]="userForm.form.invalid || topicHasError " class="btn btn-primary" type="submit">Submit Form</button><br><br>
+    <button [disabled]="userForm.form.untouched" class="btn btn-primary" type="reset">Reset Form</button>
+
+
+  </form>
+</div>
+
+<div class="after-enrollment"*ngIf="enrolled">
+  <h1 align=center >Thanks For Enrolling</h1>
+  <button class="btn btn-primary" onClick="window.location.reload();">Add new enrollment</button>
+
+
+</div>
