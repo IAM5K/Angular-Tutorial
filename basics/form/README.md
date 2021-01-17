@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 This is Model Template driven form.\
 No database attached.\
 Integrated with Express server.\
-Data sent to server and verified.\  
+Data sent to server and verified. 
